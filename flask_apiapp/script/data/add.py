@@ -10,10 +10,16 @@ l = [
     {'name': 'Python for DevOps', 'fee': '5,500,000₫', 'desc': 'Tổng quan: Python hiện đang là 1 trong những ngôn ngữ lập trình phổ biến nhất cho người mới bắt đầu với CNTT nhờ…', },
 ]
 
-for i in l:
-    r = Tel4vnCourse(**i)
-    dbsession.add(r)
-    dbsession.commit()
+for i,m in enumerate(l):  # m aka model_obj_dict, i aka index
+    d = {
+        **m,
+
+        # add suffix clone#i from i=1,2,...
+        'name': m['name']+f' clone#{i}' if i>0 else \
+                m['name'],
+    }
+    r = Tel4vnCourse(**d)
+    dbsession.add(r) ; dbsession.commit()
 
 print(f'''
 added row  {len(l)}
