@@ -1,16 +1,21 @@
 from flask import Flask, jsonify
 
+from service.db.mysql import dbsession
+from service.db.model_class import Tel4vnCourse
+
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return GET_mock_tel4vn_course()
+    # return GET_mock_tel4vn_course()
+    return GET_tel4vn_course()
 
 
 #region /tel4vn_course
 def GET_tel4vn_course():
-    return GET_mock_tel4vn_course()  #TODO replaced this by real db data
+    r_all = dbsession.query(Tel4vnCourse).all()
+    return jsonify(r_all)
 
 @app.route('/tel4vn_course', methods=['GET'])
 def tel4vn_course():
