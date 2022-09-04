@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return GET_tel4vn_course()
+    return GET_mock_tel4vn_course()
 
 
 #region /tel4vn_course
@@ -20,7 +20,7 @@ def tel4vn_course():
 #region mock
 @app.route('/mock/tel4vn_course', methods=['GET'])
 def mock_tel4vn_course():
-    return GET_tel4vn_course()
+    return GET_mock_tel4vn_course()
 
 mock_course_l = [
     {'name': 'Docker Container',  'fee': '2,500,000₫', 'desc': 'Khóa học trang bị nền tảng kiến thức về container và triển khai ứng dụng theo kiến trúc microservice', },
