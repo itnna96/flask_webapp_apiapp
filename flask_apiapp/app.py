@@ -8,9 +8,20 @@ mock_course_l = [
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def index():
+    return GET_tel4vn_course()
+
+
+#region /tel4vn_course
+def GET_tel4vn_course():
+    return jsonify(mock_course_l)
+
 @app.route('/tel4vn_course', methods=['GET'])
 def tel4vn_course():
-    return jsonify(mock_course_l)
+    return GET_tel4vn_course()
+#endregion /tel4vn_course
+
 
 if __name__ == '__main__':
     app.run(port=5000, host='0.0.0.0')
