@@ -22,6 +22,6 @@ for i,m in enumerate(l):  # m aka model_obj_dict, i aka index
     dbsession.add(r) ; dbsession.commit()
 
 print(f'''
-added row  {len(l)}
-totoal row {len(dbsession.query(Tel4vnCourse).all())}
+added row {len(l)}
+total row {len(dbsession.query(Tel4vnCourse).all())}
 '''.rstrip())
