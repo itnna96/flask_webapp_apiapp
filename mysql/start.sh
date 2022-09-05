@@ -1,7 +1,7 @@
 #!/bin/bash
 SH=$(cd `dirname $BASH_SOURCE` && pwd)
 
-c=cau3_mysql_c ; p=20829 v="$SH/v"
+c=mysql_cau3_c ; p=20829 v="$SH/v"
 docker rm -f $c ; docker run -d  --name $c -h$c \
     -p "$p:3306" \
     \
