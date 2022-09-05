@@ -1,8 +1,12 @@
+from service.envvar import ensure_envvar_DB_xx_defined
+#
 from flask import Flask, jsonify
-
+#
 from service.db.mysql import dbsession
 from service.db.model_class import Tel4vnCourse
 
+
+ensure_envvar_DB_xx_defined()
 
 app = Flask(__name__)
 
