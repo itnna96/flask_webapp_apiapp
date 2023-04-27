@@ -1,1 +1,7 @@
-.idea/
+# https://gitlab.com/namgivu_fullstack/devsops/namgivu_dockercompose/flask_webapp_apiapp.git
+# * v1
+/flask_webapp_apiapp/
+
+# https://gitlab.com/namgivu_fullstack/devsops/namgivu_dockercompose/flask_webapp_apiapp.git
+# * v2
+/flask_webapp_apiapp__v2/
