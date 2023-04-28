@@ -8,9 +8,8 @@ flask = "*"
 #
 python-dotenv = "*"
 #
-sqlalchemy = "*"
-sqlalchemy-utils = "*"
-mysqlclient = "*"  # if install error, fixed by sudo apt-get install libmysqlclient-dev, ref. https://stackoverflow.com/a/35191977/248616
+SQLAlchemy = "*"
+PyMySQL = "*"  # ref. https://stackoverflow.com/a/71730129/248616
 
 
 [dev-packages]

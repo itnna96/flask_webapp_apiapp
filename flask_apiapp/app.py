@@ -2,6 +2,8 @@ from service.envvar import ensure_envvar_DB_xx_defined
 #
 from flask import Flask, jsonify
 #
+import pymysql; pymysql.install_as_MySQLdb()  # ref. https://stackoverflow.com/a/71730129/248616
+#
 from service.db.mysql import dbsession
 from service.db.model_class import Tel4vnCourse
 
