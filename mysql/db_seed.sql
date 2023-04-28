@@ -1,3 +1,7 @@
+SET NAMES utf8;
+
+USE db;
+
 DROP TABLE if exists BinhLuan;
 
 CREATE TABLE tel4vn_courses (
