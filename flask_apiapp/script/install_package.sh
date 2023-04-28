@@ -1,5 +1,4 @@
 #!/bin/bash
-#TODO rename this file to install_package.sh
 
 # install pipenv fr latest pip
 python3 -m pip install --upgrade pip
