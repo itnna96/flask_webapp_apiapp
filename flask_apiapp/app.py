@@ -14,8 +14,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    # return GET_mock_tel4vn_course()
-    return GET_tel4vn_course()
+    return jsonify({})
 
 
 #region /tel4vncourse
