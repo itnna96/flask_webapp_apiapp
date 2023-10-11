@@ -1,0 +1,40 @@
+version: '3'
+services:
+  mysql_c:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - 20829:3306
+    volumes:
+      - mysql_v:/var/lib/mysql
+      - ./mysql/initdb.d/db_seed.sql:/docker-entrypoint-initdb.d/db_seed.sql
+
+  adminer_c:
+    image: adminer
+    ports:
+      - 8000:8080
+    depends_on:
+      - mysql_c
+  
+  apiapp_c:
+    image: python_i
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
+    restart: always
+    environment:
+      DB_USER: root
+      DB_PASS: root
+      DB_HOST: mysql_c
+      DB_NAME: db
+    depends_on:
+      - mysql_c
+
+
+volumes:
+  mysql_v:
